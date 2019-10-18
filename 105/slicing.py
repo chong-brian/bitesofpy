@@ -20,11 +20,14 @@ def slice_and_dice(text: str = text) -> list:
     """Get a list of words from the passed in text.
        See the Bite description for step by step instructions"""
     results = []
-    split_text = text.strip().split('\n')
-    for line in split_text:
-        new_line = line.lstrip()
-        if new_line[0].islower():
-            words = new_line.split(' ')
-            last_word = words[-1]
-            results.append(last_word.replace('.', '').replace('!', ''))
+    for line in text.strip().splitlines():
+        line = line.lstrip()
+
+        if line[0] not in ascii_lowercase:
+            continue
+
+        words = line.split()
+        last_word_stripped = words[-1].rstrip('!.')
+        results.append(last_word_stripped)
+
     return results
