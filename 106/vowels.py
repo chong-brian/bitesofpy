@@ -47,7 +47,7 @@ def strip_vowels(text: str) -> (str, int):
                 vowel_count += 1
         new_text.append(line)
 
-    return ''.join(new_text), vowel_count
+    return ' '.join(new_text), vowel_count
 
 
 print(strip_vowels(text))
