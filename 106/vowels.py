@@ -41,11 +41,13 @@ def strip_vowels(text: str) -> (str, int):
     vowel_count = 0
     new_text = []
     for line in text.splitlines():
+        print(line)
         for letter in line:
-            if letter in vowels:
+            if letter.lower() in vowels:
                 line = line.replace(letter, '*')
                 vowel_count += 1
         new_text.append(line)
+        print(line)
 
     return ' '.join(new_text), vowel_count
 
