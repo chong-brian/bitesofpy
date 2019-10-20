@@ -36,7 +36,7 @@ def strip_vowels(text: str) -> (str, int):
        ('h*ll* w*rld', 3)
 
        The str/int types in the function definition above are part
-       of Python's new type hinting:
+       of Python's new type hinting:e
        https://docs.python.org/3/library/typing.html"""
     vowel_count = 0
     new_text = []
