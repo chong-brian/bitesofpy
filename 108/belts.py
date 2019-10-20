@@ -1,6 +1,6 @@
 from collections import namedtuple
 
-BeltStats = namedtuple('BeltStats', 'score ninjas')
+BeltStats = namedtuple('BeltStats', 'score, ninjas')
 
 ninja_belts = {'yellow': BeltStats(50, 11),
                'orange': BeltStats(100, 7),
@@ -24,7 +24,7 @@ def get_total_points(belts=ninja_belts):
        Return the total number of points int from the function."""
     total_points = 0
 
-    for belt in belts:
+    for belt in belts.values():
         total_points += belt.score * belt.ninjas
 
     return total_points
