@@ -22,7 +22,7 @@ def sort_by_surname_desc(names):
     for name in names:
         last_names.append(name.split()[-1])
 
-    return sorted(last_names)[-1]
+    return sorted(last_names, reverse=True)
 
 
 def shortest_first_name(names):
