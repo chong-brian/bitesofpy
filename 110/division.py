@@ -12,7 +12,6 @@ def divide_numbers(numerator, denominator):
         raise ValueError()
 
     try:
-        result = numerator / denominator
-        return result
+        return numerator / denominator
     except ZeroDivisionError:
         return 0
