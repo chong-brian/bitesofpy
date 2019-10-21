@@ -12,3 +12,9 @@ def enumerate_names_countries():
        6. Rodolfo    Mexico"""
     for n in range(0, len(names)):
         print(f"{n + 1}. {names[n]}{' ' * (11 - len(names[n]))}{countries[n]}")
+
+""" Alternate solution
+    fmt = '{}. {:<10} {}'
+    for i, (name, country) in enumerate(zip(names, countries), 1):
+        print(fmt.format(i, name, country))
+        """"""
