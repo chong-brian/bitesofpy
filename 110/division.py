@@ -9,7 +9,7 @@ def divide_numbers(numerator, denominator):
         numerator = int(numerator)
         denominator = int(denominator)
     except ValueError:
-        raise ValueError()
+        raise
 
     try:
         return numerator / denominator
