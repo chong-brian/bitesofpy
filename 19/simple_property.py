@@ -8,4 +8,6 @@ class Promo:
         self.name = name
         self.expires = expires
 
-    expired = property(NOW > self.expires)
+    @property
+    def expired(self):
+        return NOW > self.expires
