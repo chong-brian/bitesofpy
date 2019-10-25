@@ -25,3 +25,13 @@ def gen_special_pybites_dates():
     return dates
 
 # print(gen_special_pybites_dates())
+
+""" OFFICIAL SOLUTION
+
+def gen_special_pybites_dates():
+    days = 0
+    while True:
+        days += 1
+        if days % 100 == 0 or days % 365 == 0:
+            yield PYBITES_BORN + timedelta(days=days)
+"""
