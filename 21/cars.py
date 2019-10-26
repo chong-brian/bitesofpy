@@ -22,7 +22,7 @@ def get_all_matching_models(cars=cars, grep='trail'):
     """return a list of all models containing the case insensitive
        'grep' string which defaults to 'trail' for this exercise,
        sort the resulting sequence alphabetically"""
-    return [model for manufacturer in cars.values() for model in manufacturer if grep in model.lower()]
+    return [model for manufacturer in cars.values() for model in manufacturer if grep.lower() in model.lower()]
 
 
 def sort_car_models(cars=cars):
