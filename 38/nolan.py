@@ -31,10 +31,5 @@ def get_movie_longest_runtime():
     root = get_tree()
     runtimes = []
     for child in root:
-        runtimes.append(child.get('title'), child.get('runtime'))
-    return max(runtimes)
-
-
-print(get_tree())
-print(get_movies())
-print(get_movie_longest_runtime())
+        runtimes.append((child.get('title'), child.get('runtime')))
+    return max(runtimes, key=lambda x: x[1])[0]
