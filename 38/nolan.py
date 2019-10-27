@@ -33,3 +33,30 @@ def get_movie_longest_runtime():
     for child in root:
         runtimes.append((child.get('title'), child.get('runtime')))
     return max(runtimes, key=lambda x: x[1])[0]
+
+
+def get_tree():
+    """You probably want to use ET.fromstring"""
+    return ET.ElementTree(ET.fromstring(xmlstring))
+
+
+def get_movies():
+    """Call get_tree and retrieve all movie titles, return a list or generator"""
+    tree = get_tree()
+    for movie in tree.iter(tag='movie'):
+        yield movie.attrib['title']
+
+
+def _get_runtime(movie):
+    """Helper function to extract the minutes (int) from the runtime movie attribute"""
+    return int(movie.attrib['runtime'].rstrip(' min'))
+
+
+def get_movie_longest_runtime():
+    """Call get_tree again and return the movie title for the movie with the longest
+runtime in minutes, for latter consider adding a _get_runtime helper"""
+    tree = get_tree()
+    movies = [(movie.attrib['title'], _get_runtime(movie))
+              for movie in tree.iter(tag='movie')]
+    max_movie, max_runtime = max(movies, key=lambda m: m[1])
+    return max_movie
