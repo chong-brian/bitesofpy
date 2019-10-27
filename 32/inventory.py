@@ -1,4 +1,4 @@
-import copy
+from copy import deepcopy
 
 items = [{'id': 1, 'name': 'laptop', 'value': 1000},
          {'id': 2, 'name': 'chair', 'value': 300},
@@ -6,4 +6,4 @@ items = [{'id': 1, 'name': 'laptop', 'value': 1000},
 
 
 def duplicate_items(items):
-    return copy.deepcopy(items)
+    return deepcopy(items)
